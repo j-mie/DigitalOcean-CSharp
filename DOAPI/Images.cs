@@ -20,6 +20,17 @@ namespace DigitalOcean
             var request = new RestRequest();
             request.Resource = "images/";
             return Execute<Images>(request);
+
         }
+
+        public virtual ImageInfo GetImage(int image_id)
+        {
+            var request = new RestRequest();
+            request.Resource = "images/" + image_id + "/";
+            return Execute<ImageInfo>(request);
+
+        }
+        //GET https://api.digitalocean.com/images/[image_id_or_slug]/?client_id=[client_id]&api_key=[api_key]
+
     }
 }

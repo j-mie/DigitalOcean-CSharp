@@ -23,6 +23,9 @@ namespace DOAPITest
                 Console.WriteLine("Image Name: {0} with ID {1}", image.name, image.id);
             }
 
+            var centosimg = client.GetImage(1601).image;
+            Console.WriteLine("Manual image lookup name: {0} with ID {1}", centosimg.name, centosimg.id);
+
             var regions = client.GetRegions();
             foreach (Region region in regions.regions)
             {
