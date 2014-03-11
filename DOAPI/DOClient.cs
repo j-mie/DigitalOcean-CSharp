@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using RestSharp;
 using RestSharp.Extensions;
 
@@ -20,16 +21,19 @@ namespace DigitalOcean
             BaseUrl = "https://api.digitalocean.com/";
             ClientID = clientID;
             APIKey = apiKey;
-
             _client = new RestClient(BaseUrl);
             _client.UserAgent = "do-csharp";
             _client.Timeout = 30000;
-
-            _client.AddDefaultUrlSegment("client_id", clientID);
-            _client.AddDefaultUrlSegment("api_key", apiKey);
+            _client.AddDefaultParameter("client_id", clientID);
+            _client.AddDefaultParameter("api_key", apiKey);
         }
 
-        public virtual T Execute<T>(RestRequest request) where T : new() //borrowed from Twilio API
+        /// <summary>
+        /// Execute a manual REST request
+        /// </summary>
+        /// <typeparam name="T">The type of object to create and populate with the returned data.</typeparam>
+        /// <param name="request">The RestRequest to execute (will use client credentials)</param>
+        public virtual T Execute<T>(RestRequest request) where T : new()
         {
             request.OnBeforeDeserialization = (resp) =>
             {
