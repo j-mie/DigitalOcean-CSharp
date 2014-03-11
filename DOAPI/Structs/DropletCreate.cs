@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DigitalOcean.Structs
 {
-        public class MakeDropletReturn
+    public class CreatedDroplet
         {
             public int id { get; set; }
             public string name { get; set; }
@@ -15,9 +15,9 @@ namespace DigitalOcean.Structs
             public int event_id { get; set; }
         }
 
-        public class DropletCreateReturn
+    public class CreateDropletStatus
         {
             public string status { get; set; }
-            public MakeDropletReturn droplet { get; set; }
+            public CreatedDroplet droplet { get; set; }
         }
 }
