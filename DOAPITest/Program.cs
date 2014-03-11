@@ -17,8 +17,15 @@ namespace DOAPITest
             DOClient client = new DOClient(ClientID, APIKey);
             Console.WriteLine("Using ClientID: {0} and APIKey: {1}", ClientID, APIKey);
 
-            var droplets = client.GetDroplets();
+            var sizes = client.GetSizes();
 
+            foreach (Size size in sizes.sizes)
+            {
+                Console.WriteLine("Size Name: {0} with ID {1}", size.name, size.id);
+            }
+
+
+            var droplets = client.GetDroplets();
             foreach (Droplet droplet in droplets.droplets)
             {
                 Console.WriteLine(droplet.name);
