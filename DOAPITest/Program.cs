@@ -17,8 +17,13 @@ namespace DOAPITest
             DOClient client = new DOClient(ClientID, APIKey);
             Console.WriteLine("Using ClientID: {0} and APIKey: {1}", ClientID, APIKey);
 
-            var sizes = client.GetSizes();
+            var regions = client.GetRegions();
+            foreach (Region region in regions.regions)
+            {
+                Console.WriteLine("Region Name: {0} with ID {1}", region.name, region.id);
+            }
 
+            var sizes = client.GetSizes();
             foreach (Size size in sizes.sizes)
             {
                 Console.WriteLine("Size Name: {0} with ID {1}", size.name, size.id);
