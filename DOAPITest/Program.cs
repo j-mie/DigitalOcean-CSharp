@@ -16,6 +16,12 @@ namespace DOAPITest
 
             DOClient client = new DOClient(ClientID, APIKey);
             Console.WriteLine("Using ClientID: {0} and APIKey: {1}", ClientID, APIKey);
+            
+            var images = client.GetImages();
+            foreach (Image image in images.images)
+            {
+                Console.WriteLine("Image Name: {0} with ID {1}", image.name, image.id);
+            }
 
             var regions = client.GetRegions();
             foreach (Region region in regions.regions)
