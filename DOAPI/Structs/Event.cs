@@ -8,8 +8,8 @@ namespace DigitalOcean.Structs
 {
     public class Event
     {
-        public string status { get; set; }
-        public int event_id { get; set; }
+        public string status { get; private set; }
+        public int event_id { get; private set; }
     }
 
     /// <summary>
@@ -17,6 +17,6 @@ namespace DigitalOcean.Structs
     /// </summary>
     public class InstantEvent
     {
-        public string status { get; set; }
+        public string status { get; private set; }
     }
 }

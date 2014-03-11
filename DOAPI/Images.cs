@@ -30,7 +30,20 @@ namespace DigitalOcean
             return Execute<ImageInfo>(request);
 
         }
-        //GET https://api.digitalocean.com/images/[image_id_or_slug]/?client_id=[client_id]&api_key=[api_key]
 
+        public virtual InstantEvent DeleteImage(int image_id)
+        {
+            var request = new RestRequest();
+            request.Resource = "images/" + image_id + "/destroy/";
+            return Execute<InstantEvent>(request);
+        }
+
+        public virtual Event TransferImage(int image_id, int region_id )
+        {
+            var request = new RestRequest();
+            request.Resource = "images/" + image_id + "/transfer/";
+            request.AddParameter("region_id", region_id);
+            return Execute<Event>(request);
+        }
     }
 }

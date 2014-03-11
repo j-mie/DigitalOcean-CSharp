@@ -11,7 +11,6 @@ namespace DigitalOcean
         {
             var request = new RestRequest();
             request.Resource = "droplets/";
-
             return Execute<Droplets>(request);
         }
 
@@ -37,8 +36,6 @@ namespace DigitalOcean
             request.AddParameter("private_networking", private_networking);
             request.AddParameter("backups_enabled", backups_enabled);
             request.AddParameter("ssh_key_ids", ssh_key_ids);
-
-
             return Execute<CreateDropletStatus>(request);
         }
     }

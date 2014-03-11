@@ -55,6 +55,7 @@
     <Compile Include="Sizes.cs" />
     <Compile Include="Structs\DropletCreate.cs" />
     <Compile Include="Structs\Droplets.cs" />
+    <Compile Include="Structs\Event.cs" />
     <Compile Include="Structs\Images.cs" />
     <Compile Include="Structs\Regions.cs" />
     <Compile Include="Structs\Sizes.cs" />
