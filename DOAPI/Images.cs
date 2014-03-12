@@ -38,12 +38,12 @@ namespace DigitalOcean
             return Execute<InstantEvent>(request);
         }
 
-        public virtual Event TransferImage(int image_id, int region_id )
+        public virtual EventPointer TransferImage(int image_id, int region_id )
         {
             var request = new RestRequest();
             request.Resource = "images/" + image_id + "/transfer/";
             request.AddParameter("region_id", region_id);
-            return Execute<Event>(request);
+            return Execute<EventPointer>(request);
         }
     }
 }

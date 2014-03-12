@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="DOClient.cs" />
     <Compile Include="Droplets.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="Images.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regions.cs" />
