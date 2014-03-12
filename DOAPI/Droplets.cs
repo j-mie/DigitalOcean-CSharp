@@ -1,6 +1,4 @@
-﻿using System;
-using DigitalOcean;
-using DigitalOcean.Structs;
+﻿using DigitalOcean.Structs;
 using RestSharp;
 
 namespace DigitalOcean
@@ -15,17 +13,24 @@ namespace DigitalOcean
         }
 
         /// <summary>
-        /// Create a new Droplet
+        ///     Create a new Droplet
         /// </summary>
         /// <param name="name">Name of the droplet - must be formatted by hostname rules</param>
         /// <param name="size_id">The ID of the size you'd like the server to be.</param>
         /// <param name="image_id">The ID of the image you'd like to be used.</param>
         /// <param name="region_id">The ID of the region you'd like the droplet in.</param>
-        /// <param name="ssh_key_ids">Numeric CSV, comma separated list of ssh_key_ids that you would like to be added to the server.</param>
-        /// <param name="private_networking">if set to <c>true</c> and the region supports it private networking will be enabledm disabled by default.</param>
+        /// <param name="ssh_key_ids">
+        ///     Numeric CSV, comma separated list of ssh_key_ids that you would like to be added to the
+        ///     server.
+        /// </param>
+        /// <param name="private_networking">
+        ///     if set to <c>true</c> and the region supports it private networking will be enabledm
+        ///     disabled by default.
+        /// </param>
         /// <param name="backups_enabled">if set to <c>true</c> backups will be enabled, disabled by default.</param>
         /// <typeparam name="T">The type of object to create and populate with the returned data.</typeparam>
-        public virtual CreateDropletStatus CreateDroplet(string name, int size_id, int image_id, int region_id, string ssh_key_ids = "", bool private_networking = false, bool backups_enabled = false)
+        public virtual CreateDropletStatus CreateDroplet(string name, int size_id, int image_id, int region_id,
+            string ssh_key_ids = "", bool private_networking = false, bool backups_enabled = false)
         {
             var request = new RestRequest();
             request.Resource = "droplets/new";
