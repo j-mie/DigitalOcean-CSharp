@@ -3,7 +3,7 @@ using System.IO;
 using DigitalOcean;
 using DigitalOcean.Structs;
 
-namespace DOAPITest
+namespace DOAPIExample
 {
     class Program
     {
