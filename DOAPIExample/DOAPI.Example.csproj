@@ -7,8 +7,8 @@
     <ProjectGuid>{2272CB0B-641C-4306-A38D-D3C8DB29D53D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DOAPIExample</RootNamespace>
-    <AssemblyName>DOAPIExample</AssemblyName>
+    <RootNamespace>DOAPI.Example</RootNamespace>
+    <AssemblyName>DOAPI.Example</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
